@@ -26,12 +26,15 @@ int main()
     printf("Nhập số n: ");
     scanf("%d", &n);
 
-    for (int i = 2; i <= n; i++)
+    int count = 0;
+    int num = 2;
+
+    while (count < n)
     {
         int isPrime = 1;
-        for (int j = 2; j <= sqrt(i); j++)
+        for (int j = 2; j <= sqrt(num); j++)
         {
-            if (i % j == 0)
+            if (num % j == 0)
             {
                 isPrime = 0;
                 break;
@@ -39,8 +42,10 @@ int main()
         }
         if (isPrime)
         {
-            printf("%d ", i);
+            printf("%d ", num);
+            count++;
         }
+        num++;
     }
 
     return 0;
